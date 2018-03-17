@@ -2,7 +2,7 @@ syntax = "proto2";
 
 package tutorial;
 
-option java_package = "com.mirhoseini.protobuftest";
+option java_package = "com.mohsenoid.protobuftest";
 option java_outer_classname = "AddressBookProtos";
 
 message Person {

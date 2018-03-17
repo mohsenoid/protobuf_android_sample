@@ -7,7 +7,7 @@ sourceSets {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.google.protobuf:protobuf-lite:3.0.0'
+    implementation 'com.google.protobuf:protobuf-lite:3.0.1'
 }
 
 protobuf {
@@ -15,12 +15,14 @@ protobuf {
         // You still need protoc like in the non-Android case
         artifact = 'com.google.protobuf:protoc:3.0.0'
     }
+
     plugins {
         javalite {
             // The codegen for lite comes as a separate artifact
             artifact = 'com.google.protobuf:protoc-gen-javalite:3.0.0'
         }
     }
+
     generateProtoTasks {
         all().each { task ->
             task.builtins {

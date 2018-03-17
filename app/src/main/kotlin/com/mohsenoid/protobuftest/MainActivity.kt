@@ -1,4 +1,4 @@
-package com.mirhoseini.protobuftest
+package com.mohsenoid.protobuftest
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
@@ -9,24 +9,27 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val bytes = testAddressBookProtobuf()
+        val addressBook = createAddressBookProtobuf()
 
-        // You can deserialize AddressBook bytes
+        // Serialize AddressBook to ByteArray
+        val bytes = addressBook.toByteArray()
+
+        // Deserialize AddressBook ByteArray
         val myAddressBook = AddressBookProtos.AddressBook.parseFrom(bytes)
         println(myAddressBook)
 
         println("Protobuf byte size: ${bytes.size}")
-        println("JSON byte size: ${sampleJson.toByteArray().size}")
+        println("JSON byte size: ${SAMPLE_JSON.toByteArray().size}")
     }
 
-    private fun testAddressBookProtobuf(): ByteArray {
+    private fun createAddressBookProtobuf(): AddressBookProtos.AddressBook {
         // building PhoneNumber objects
         val phoneHome = AddressBookProtos.Person.PhoneNumber.newBuilder()
-                .setNumber("123456")
+                .setNumber("+49123456")
                 .setType(AddressBookProtos.Person.PhoneType.HOME)
                 .build()
         val phoneMobile = AddressBookProtos.Person.PhoneNumber.newBuilder()
-                .setNumber("654321")
+                .setNumber("+49654321")
                 .setType(AddressBookProtos.Person.PhoneType.MOBILE)
                 .build()
 
@@ -34,39 +37,38 @@ class MainActivity : AppCompatActivity() {
         val person = AddressBookProtos.Person.newBuilder()
                 .setId(1)
                 .setName("Mohsen")
-                .setEmail("mohsen@mirhoseini.info")
+                .setEmail("info@mohsenoid.com")
                 .addAllPhones(listOf(phoneHome, phoneMobile))
                 .build()
 
         // building an AddressBook object using person data
-        val addressBook = AddressBookProtos.AddressBook.newBuilder()
+        return AddressBookProtos.AddressBook.newBuilder()
                 .addAllPeople(listOf(person))
                 .build()
-
-        // finally this is how you get serialized ByteArray
-        return addressBook.toByteArray()
     }
 
-    private val sampleJson = """{
+    companion object {
+        private const val SAMPLE_JSON =
+                """{
   "addressbook": [
     {
       "person": {
         "id": 1,
         "name": "Mohsen",
-        "email": "mohsen@mirhoseini.info"
+        "email": "info@mohsenoid.com"
       }
     },
     {
       "phones": [
         {
           "phone": {
-            "number": "123456",
+            "number": "+49123456",
             "type": "HOME"
           }
         },
         {
           "phone": {
-            "number": "654321",
+            "number": "+49654321",
             "type": "MOBILE"
           }
         }
@@ -74,5 +76,5 @@ class MainActivity : AppCompatActivity() {
     }
   ]
 }"""
+    }
 }
-
