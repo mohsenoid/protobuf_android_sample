@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ProtobufTest.iml" filepath="$PROJECT_DIR$/ProtobufTest.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/protobuf/protobuf.iml" filepath="$PROJECT_DIR$/protobuf/protobuf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf_android_sample.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf_android_sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/protobuf_android_sample.app.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.main.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.test.iml" filepath="$PROJECT_DIR$/.idea/modules/protobuf/protobuf_android_sample.protobuf.test.iml" />
     </modules>
   </component>
 </project>

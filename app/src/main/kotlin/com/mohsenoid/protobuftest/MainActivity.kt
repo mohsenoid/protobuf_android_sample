@@ -1,7 +1,8 @@
 package com.mohsenoid.protobuftest
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,31 +26,31 @@ class MainActivity : AppCompatActivity() {
     private fun createAddressBookProtobuf(): AddressBookProtos.AddressBook {
         // building PhoneNumber objects
         val phoneHome = AddressBookProtos.Person.PhoneNumber.newBuilder()
-                .setNumber("+49123456")
-                .setType(AddressBookProtos.Person.PhoneType.HOME)
-                .build()
+            .setNumber("+49123456")
+            .setType(AddressBookProtos.Person.PhoneType.HOME)
+            .build()
         val phoneMobile = AddressBookProtos.Person.PhoneNumber.newBuilder()
-                .setNumber("+49654321")
-                .setType(AddressBookProtos.Person.PhoneType.MOBILE)
-                .build()
+            .setNumber("+49654321")
+            .setType(AddressBookProtos.Person.PhoneType.MOBILE)
+            .build()
 
         // building a Person object using phone data
         val person = AddressBookProtos.Person.newBuilder()
-                .setId(1)
-                .setName("Mohsen")
-                .setEmail("info@mohsenoid.com")
-                .addAllPhones(listOf(phoneHome, phoneMobile))
-                .build()
+            .setId(1)
+            .setName("Mohsen")
+            .setEmail("info@mohsenoid.com")
+            .addAllPhones(listOf(phoneHome, phoneMobile))
+            .build()
 
         // building an AddressBook object using person data
         return AddressBookProtos.AddressBook.newBuilder()
-                .addAllPeople(listOf(person))
-                .build()
+            .addAllPeople(listOf(person))
+            .build()
     }
 
     companion object {
         private const val SAMPLE_JSON =
-                """{
+            """{
   "addressbook": [
     {
       "person": {
